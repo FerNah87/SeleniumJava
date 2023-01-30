@@ -1,0 +1,22 @@
+package com.qaschool.automation.navegadores;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ControladorNavegador {
+
+	public static void main(String[] args) {
+		WebDriver driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\fernando.zalasar\\eclipse-workspace\\AccesoriosSeleniumJava\\SeleniumLibrary\\chromedriver.exe");
+		driver.get("http://www.google.com.ar/");
+		driver.navigate().to("http://www.winstoncastillo.com/robot-selenium/");
+		driver.manage().window().maximize();
+		System.out.println(driver.getCurrentUrl());
+		System.out.println(driver.getTitle());
+		driver.findElement(By.linkText("MacBook Pro")).click();
+		System.out.println(driver.getCurrentUrl());
+		
+		driver.close();
+	}
+}

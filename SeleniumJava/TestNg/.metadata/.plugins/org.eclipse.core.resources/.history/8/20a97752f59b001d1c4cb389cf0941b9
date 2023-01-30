@@ -1,0 +1,14 @@
+package anotacionestestng;
+
+import org.testng.annotations.Test;
+
+public class SegundoSet {
+	@Test
+	public void pruebaTres() {
+		System.out.println("Prueba Tres del segundo Set");
+	}
+	@Test
+	public void pruebaCuatro() {
+		System.out.println("Prueba Cuatro del segundo Set");
+	}
+}

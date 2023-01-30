@@ -1,0 +1,127 @@
+package testcase;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
+
+public class CasosCarrito extends Base {
+	
+	@BeforeSuite
+	public void abrirNavegador() {
+		navegador.get("http://automationpractice.com/index.php");
+	}
+	
+	@Test
+	public void elegirArticulosAzarCarritoCompras() {
+		//11.79
+		Assert.assertEquals(navegador.getTitle(), "My Store");
+		WebElement contenedorDeProductos = navegador.findElement(By.id("homefeatured"));
+		listaDeProductos = contenedorDeProductos.findElements(By.tagName("li"));
+		//System.out.println(listaDeProductos.size());
+		
+		//10.80 Seleccionar 3 productos
+		if (listaDeProductos.size()<4) {
+			cantidadLista = listaDeProductos.size();
+		} else {
+			cantidadLista = 3;
+		}
+		//Agregar numero al Azar
+		for (int i = 0; i<cantidadLista; i++) {
+			numeroAlAzar = (int) (Math.random() * listaDeProductos.size() +1);
+			if (productosAlAzar.contains(numeroAlAzar)) {
+				i--;
+			}else {
+				productosAlAzar.add(numeroAlAzar);
+			}
+		}	
+		productosAlAzar.forEach(System.out::println);
+	}
+	
+	@Test(dependsOnMethods={"elegirArticulosAzarCarritoCompras"})
+	public void anadirProductosAlCarrito() {
+		for (int i=0; i < cantidadLista; i++) {			                        
+			//String xPathElemento = String.format("//*[@id=\"homefeatured\"]/li[%s]/div/div[2]/div[1]/span", productosAlAzar.get(i));
+			//String precioUnitarioDolar = navegador.findElement(By.xpath(xPathElemento)).getText();
+			repoHomePage.setModifiedXPath(productosAlAzar.get(i).toString());
+			String precioUnitarioDolar = repoHomePage.productoAleatorioElement(repoHomePage.getModifiedXPath()).getText();
+			String precioUnitario = precioUnitarioDolar.replace("$", "");
+			System.out.println(precioUnitario);
+			Double precio = Double.valueOf(precioUnitario);
+			System.out.println("Este es el valor unitario del producto: " + precio);
+			totalProductos += precio;
+			System.out.println("Este es el total de los valores: " + totalProductos);
+			//listaDeProductos.get(productosAlAzar.get(i)-1).findElement(By.linkText("Add to cart")).click();
+			repoHomePage.addToCartElement(listaDeProductos.get(productosAlAzar.get(i)-1)).click();
+			
+			if (i==0) {
+				mensajeDeVentana = "There is 1 item in your cart.";
+				mensajeCarrito = "Cart 1 Product";
+			} else {
+				mensajeDeVentana = String.format("There are %s items in your cart.", i+1);
+				mensajeCarrito = String.format("Cart %s Products", i+1);
+			}
+			
+			WebElement ventanaDeProducto = espera.until(ExpectedConditions.visibilityOf(repoHomePage.ventanaPopUpElement()));
+			
+			//Comparaciones
+			Assert.assertEquals(repoHomePage.ventanaPopUpElement().getText(), "Product successfully added to your shopping cart");
+			
+			Assert.assertEquals(repoHomePage.tituloVentanaElement().getText(), mensajeDeVentana);
+			Assert.assertEquals(repoHomePage.tituloCarritoElement().getText(), mensajeCarrito);
+			
+			repoHomePage.continueShoppingElement().click();
+			Boolean ventanaDesaparecida = espera.until(ExpectedConditions.invisibilityOf(repoHomePage.ventanaPopUpElement()));
+		}
+	}
+	
+	@Test(dependsOnMethods={"anadirProductosAlCarrito"})
+	public void verificarProductos () {
+		//Verificaciones Finales del caso de Prueba
+		Actions mouseActions = new Actions(navegador);
+		WebElement cartOptions = repoHomePage.cartOptionsElements();
+		mouseActions.moveToElement(cartOptions).perform();
+		totalProductos += 2.00;
+		
+		//Codigo para crar dos decimales
+		DecimalFormat df2 = new DecimalFormat("#.00");
+		
+		totalEnString = String.format("$%s", df2.format(totalProductos));
+		totalEnString = totalEnString.replace(",", ".");
+		
+		//Assert.assertTrue(false);
+		
+		WebElement ventanaTotal = espera.until(ExpectedConditions.visibilityOf(repoHomePage.ventanaTotalElement()));
+		Assert.assertEquals(repoHomePage.ventanaTotalElement().getText(), totalEnString);
+		
+		WebElement botonCheckout = espera.until(ExpectedConditions.visibilityOf(repoHomePage.botonCheckOutElement()));
+		
+		SoftAssert validaciones = new SoftAssert();
+		
+		//validaciones.assertTrue(false);
+		validaciones.assertTrue(true);
+		
+		//validaciones.assertAll();
+	}
+	
+	@Test(dependsOnMethods= {"verificarProductos"})
+	public void verificarCheckOut() {
+		repoHomePage.botonCheckOutElement().click();
+		Assert.assertEquals(navegador.getTitle(), "Order - My Store");
+		String primerTitulo = repoLoginPage.cartTitleElement().getText();
+		//SHOPPING-CART SUMMARY
+		primerTitulo = primerTitulo.substring(0, 21);
+		Assert.assertEquals(primerTitulo, "SHOPPING-CART SUMMARY");
+		Assert.assertEquals(repoLoginPage.priceContainerElement().getText(), totalEnString);
+		repoLoginPage.proceedToCheckoutElement().click();
+		Assert.assertEquals(navegador.getTitle(), "Login - My Store");
+	}
+	
+	
+	@AfterSuite
+	public void cerrarNavegador() {
+		navegador.close();
+	}
+}

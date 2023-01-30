@@ -1,0 +1,24 @@
+package com.qaschool.tipsautomation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class Lista_Aleatoria {
+
+	public static void main(String[] args) {
+		//Notificaciones
+		ChromeOptions notificaciones = new ChromeOptions();
+		notificaciones.addArguments("--disable-notifications");
+		notificaciones.addArguments("--disable-extensions");
+		WebDriver navegar = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\fernando.zalasar\\eclipse-workspace\\AccesoriosSeleniumJava\\SeleniumLibrary\\chromedriver.exe");
+		navegar.get("http://reddit.com");
+		navegar.findElement(By.id("header-search-bar")).click();
+		//eliminar la notificacion superior izq desactivando la opcion
+		
+		
+	}
+
+}

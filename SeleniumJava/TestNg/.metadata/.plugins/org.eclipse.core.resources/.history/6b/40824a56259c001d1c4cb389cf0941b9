@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite de Pruebas">
+<listeners>
+<listener class-name="testlisteners.Listener"/>
+</listeners>
+<parameter name="userName" value="Administrator"/>
+<parameter name="password" value="123456"/>
+  <test thread-count="5" name="Casos de Prueba Anotaciones">
+    <classes>
+      <class name="anotacionestestng.AnotacionesBasicas"/>
+      <class name="anotacionestestng.SegundoSet" />
+    </classes>
+  </test> <!-- Casos de Prueba Anotaciones -->
+  <test name="Casos de Pruebas Nuevos">
+    <classes>
+      <class name="anotacionestestng.TercerSet"/>
+    </classes>
+  </test> <!-- Nuevo Set de Pruebas -->
+</suite> <!-- Suite de Pruebas -->

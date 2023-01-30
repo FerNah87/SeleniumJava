@@ -1,0 +1,22 @@
+package com.qaautomation.objetos;
+
+public class ProgramaBase {
+
+	public static void main(String[] args) {
+		Navegador navegadorWeb1 = new Navegador();
+		Navegador navegadorWeb2 = new Navegador();
+
+		navegadorWeb2.setAutor("Machintosh");
+		navegadorWeb2.setObsoleto(true);
+		
+		System.out.println("Navegador 1:\n Autor:" + navegadorWeb1.getAutor()+"\n"+navegadorWeb1.isObsoleto());
+		System.out.println("Navegador 2:\n Autor:" +navegadorWeb2.getAutor()+"\n"+navegadorWeb2.isObsoleto());
+		System.out.println("Navegador 1:\n Compatible Mac:"+navegadorWeb1.compatibleSistema("mac"));
+		System.out.println("Navegador 1:\n Compatible Windows:"+navegadorWeb1.compatibleSistema("windows"));
+		System.out.println("Navegador 1:\n Compatible Linux:"+navegadorWeb1.compatibleSistema("linux"));
+		System.out.println("Navegador 2:\n Compatible Mac:"+navegadorWeb2.compatibleSistema("mac"));
+		System.out.println("Navegador 2:\n Compatible Wndows:"+navegadorWeb2.compatibleSistema("windows"));
+		System.out.println("Navegador 2:\n Compatible Linux:"+navegadorWeb2.compatibleSistema("linux"));
+	}
+
+}

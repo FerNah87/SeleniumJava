@@ -1,0 +1,14 @@
+package com.qaschool.automation.navegadores;
+
+import org.openqa.selenium.WebDriver;
+
+public class ControladorNavegador {
+
+	public static void main(String[] args) {
+		// Codigo para navegadores
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\fernando.zalasar\\eclipse-workspace\\AccesoriosSeleniumJava\\SeleniumLibrary\\chromedriver_win32");
+		WebDriver driver = new WebDriver();
+
+	}
+
+}

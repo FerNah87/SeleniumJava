@@ -1,0 +1,35 @@
+package com.qaschool.tipsautomatizacion;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
+
+public class Lista_aleatoria {
+
+	public static void main(String[] args) throws InterruptedException {
+		ChromeOptions notificaciones = new ChromeOptions();
+		notificaciones.addArguments("--disable-notifications");
+		notificaciones.addArguments("--disable-extensions");
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "D:\\selenium\\chromedriver\\chromedriver.exe");
+		WebDriver navegador = new ChromeDriver(notificaciones);
+		navegador.get("http://amazon.com");
+		navegador.findElement(By.xpath("/html/body/div[1]/section/div[4]/article[1]/div[1]/div[1]/div/p[1]/span/span/input")).sendKeys("laptop");
+		Thread.sleep(2000);
+		List<WebElement> opciones = navegador.findElements(By.id("nav-flyout-searchAjax"));
+		for (WebElement opcion:opciones) {
+			System.out.println(opcion.getText());
+			if (opcion.getText().contains("laptop stand for desk")) {
+				opcion.click();
+				break;
+			}
+		}
+		Assert.assertEquals(navegador.getTitle(), "Amazon.com : laptop stand for desk");
+	}
+
+}

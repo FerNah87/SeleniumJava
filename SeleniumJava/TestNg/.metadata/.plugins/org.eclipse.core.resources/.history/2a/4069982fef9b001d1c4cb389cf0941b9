@@ -1,0 +1,23 @@
+package anotacionestestng;
+
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class AnotacionesBasicas {
+	@BeforeClass
+	public void codigoAntesClase() {
+		System.out.println("Este codigo se ejecuta antes de la clase");
+	}
+	
+	@AfterClass
+	public void pruebaUno() {
+		System.out.println("Este codigo se ejecuta despues de la clase");
+	}
+	
+	@Test
+	public void codigoDeLaPrueba() {
+		System.out.println("Esta es la prueba");
+	}
+
+}

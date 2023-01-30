@@ -1,0 +1,11 @@
+package com.qaschool.automation.navegadores;
+
+public class ControladorNavegador {
+
+	public static void main(String[] args) {
+		// Codigo para navegadores
+		
+		
+	}
+
+}

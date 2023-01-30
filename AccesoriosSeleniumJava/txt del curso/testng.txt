@@ -1,0 +1,3 @@
+https://mvnrepository.com/artifact/org.testng/testng/6.7
+
+se descarga la libreria y se carga en el proyecto Build path / Configure Build Path / Add External Jars (buscar el coso testng)

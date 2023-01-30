@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;testEndToEnd.FluentWait&apos; to &apos;FluentWaitClase&apos;&#x0D;&#x0A;- Original project: &apos;Ajax-Iframes-Waits&apos;&#x0D;&#x0A;- Original element: &apos;testEndToEnd.FluentWait&apos;&#x0D;&#x0A;- Renamed element: &apos;testEndToEnd.FluentWaitClase&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;FluentWait&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;testEndToEnd{FluentWait.java[FluentWait" matchStrategy="1" name="FluentWaitClase" qualified="false" references="true" similarDeclarations="false" stamp="1674663784494" textual="false" version="1.0"/>
+</session>

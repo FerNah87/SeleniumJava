@@ -1,0 +1,105 @@
+package com.qaschool.automation.navegadores;
+
+import java.util.ArrayList;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class ControladorNavegador {
+
+	public static void main(String[] args) {
+		/*WebDriver driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\fernando.zalasar\\eclipse-workspace\\AccesoriosSeleniumJava\\SeleniumLibrary\\chromedriver.exe");
+		driver.get("http://www.google.com.ar/");
+		driver.navigate().to("http://www.winstoncastillo.com/robot-selenium/");
+		driver.manage().window().maximize();
+		System.out.println(driver.getCurrentUrl());
+		System.out.println(driver.getTitle());
+		driver.findElement(By.linkText("MacBook Pro")).click();
+		System.out.println(driver.getCurrentUrl());
+		System.out.println(driver.getTitle());
+		//Controladores de navegador
+		driver.navigate().back();
+		driver.navigate().forward();
+		//refresh de la pagina
+		driver.navigate().refresh();
+		driver.navigate().back();
+		//pasar el mouse sobre las solapas (instancia la clase que toma las prop del navegador)
+		Actions accionMouse = new Actions(driver);
+		WebElement opcionMenu = driver.findElement(By.xpath("//*[@id=\"menu\"]/div[2]/ul/li[3]/a"));
+		accionMouse.moveToElement(opcionMenu).perform();
+		WebElement opcionSoftware = driver.findElement(By.xpath("//*[@id=\"menu\"]/div[2]/ul/li[1]/a"));
+		accionMouse.moveToElement(opcionSoftware).perform();
+		driver.close();
+		//Hasta aca todo OK luego sigue los tuto pero...
+		//pestañas
+/*		String primeraPestana = driver.getWindowHandle();
+		Integer cantidadPestanas = driver.getWindowHandles().size();
+		System.out.println(cantidadPestanas);*/
+		//Abrir pestaña nueva
+/*		JavascriptExecutor codigo = (JavascriptExecutor) driver;
+		codigo.executeScript("Windows.open();");
+		cantidadPestanas = driver.getWindowHandles().size();
+		System.out.println(cantidadPestanas);
+		ArrayList<String> pestanas = new ArrayList<String>(driver.getWindowHandles());*/
+		//en la primera pestaña direccionaria a esa pagina
+		//para mas pestaña copiar y cambiar el numero (0 - infinito)
+/*		driver.switchTo().window(pestanas.get(1));
+		driver.get("http://www.winstoncastillo.com/robot-selenium/");*/
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\fernando.zalasar\\eclipse-workspace\\AccesoriosSeleniumJava\\SeleniumLibrary\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get("https://winstoncastillo.com/robot-selenium");
+		driver.findElement(By.linkText("MacBook")).click();
+		System.out.println(driver.getCurrentUrl());
+		System.out.println(driver.getTitle());
+		driver.navigate().back();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.navigate().forward();
+		driver.navigate().refresh();
+		driver.navigate().back();
+		Actions raton = new Actions(driver);
+		WebElement opcionMenu = driver.findElement(By.xpath("//*[@id=\"menu\"]/div[2]/ul/li[3]/a"));
+		raton.moveToElement(opcionMenu).perform();
+		//driver.close();
+		String primerTab = driver.getWindowHandle();
+		Integer cantidadTabs = driver.getWindowHandles().size();
+		System.out.println(cantidadTabs);
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("window.open();");
+		ArrayList<String> pestanas = new ArrayList<String> (driver.getWindowHandles());
+		driver.switchTo().window(pestanas.get(1));
+		driver.get("https://winstoncastillo.com/");
+		String segundoTab = driver.getWindowHandle();
+		js.executeScript("window.open();");
+		js.executeScript("window.open();");
+		pestanas = new ArrayList<String> (driver.getWindowHandles());
+		driver.switchTo().window(pestanas.get(2));
+		driver.get("https://google.com/");
+		String TercerTab = driver.getWindowHandle();
+		driver.switchTo().window(pestanas.get(3));
+		driver.get("https://selenium.dev/");
+		String CuartoTab = driver.getWindowHandle();
+		driver.switchTo().window(primerTab);
+		driver.findElement(By.xpath("//*[@id=\"search\"]/input")).sendKeys("Busqueda");
+		driver.switchTo().window(segundoTab);
+		driver.findElement(By.xpath("//*[@id=\"portfolio-link\"]/span")).click();
+		driver.switchTo().window(TercerTab);
+		driver.findElement(By.xpath("//*[@id=\"tsf\"]/div[2]/div[1]/div[1]/div/div[2]/input")).sendKeys("Testeando");		
+		driver.switchTo().window(CuartoTab);
+		driver.findElement(By.linkText("Downloads")).click();
+		driver.close();
+		Integer pestanasRestantes = driver.getWindowHandles().size();
+		System.out.println("Quedan las siguientes Pestanas aun abiertas: " + pestanasRestantes);
+		driver.quit();
+	
+
+		//driver.close();
+	}
+}
+

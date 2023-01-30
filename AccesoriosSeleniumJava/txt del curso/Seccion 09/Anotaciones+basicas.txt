@@ -1,0 +1,69 @@
+public class AnotacionesBasicas {
+	
+	@BeforeClass
+	public void codigoAntesClase() {
+		//Rutina de codigo antes de la clase
+		System.out.println("Este Código se ejecuta antes de la clase");
+	}
+	
+	@AfterClass
+	public void codigoDespuesClase() {
+		//Rutina de codigo despues de la clase
+		System.out.println("Este Código se ejecuta despues de la clase");		
+	}
+	
+	@BeforeSuite
+	public void codigoAntesSuite() {
+		//Rutina de codigo despues de la clase
+		System.out.println("Este Código se ejecuta antes de toda la suite");				
+	}
+	
+	@AfterSuite
+	public void codigoDespuesSuite() {
+		//Rutina de codigo despues de la clase
+		System.out.println("Este Código se ejecuta despues de toda la suite");				
+	}
+
+	
+	@BeforeMethod()
+	public void antesDelMetodo() {
+		//Rutina de código que se ejecuta antes de cada método con anotacion test
+		System.out.println("Estos codigos se ejecutan antes de cada test");
+	}
+	
+
+	@AfterMethod()
+	public void despuesDelMetodo() {
+		//Rutina de código que se ejecuta despues de cada método con anotacion test
+		System.out.println("Estos codigos se ejecutan despues de cada test");
+	}
+
+	@BeforeTest
+	public void antesSetTest() {
+		//Rutina de código que se ejecuta en cada set de pruebas según el archivo xml
+		System.out.println("Estos codigos se ejecutan antes de todos los archivo incluidos en el set de pruebas del xml");
+		
+	} 
+
+	@AfterTest
+	public void despuesSetTest() {
+		//Rutina de código que se ejecuta en cada set de pruebas según el archivo xml
+		System.out.println("Estos codigos se ejecutan despues de todos los archivos incluido en el set de pruebas");
+		
+	} 
+
+	@Test(groups= {"functional"})
+	public void pruebaUno() {
+		//Rutina de código para correr la prueba, generalmente esta todo el código de selenium
+		System.out.println("Esta es la prueba uno y funcional");
+		
+	}
+
+	@Test(dependsOnMethods={"pruebaUno"})
+	public void pruebaDos() {
+		//Rutina de código para correr la prueba, generalmente esta todo el código de selenium
+		System.out.println("Esta es la prueba dos");
+		
+	}
+
+}

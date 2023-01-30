@@ -1,0 +1,18 @@
+package testEndToEnd;
+
+import java.time.Duration;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class Waits {
+	WebDriver navegador = new ChromeDriver();
+	
+	@Test
+	public void implicitWait() {
+		//implicityWait old version (del video y txt ↓)
+		//navegador.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		//implicityWait (new version ↓)
+		navegador.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	}
+}

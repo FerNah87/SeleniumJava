@@ -1,0 +1,25 @@
+package com.qaschool.automationpractice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Primera_automatizacion {
+
+	public static void main(String[] args) {
+		// Clase para identificar elementos
+		System.setProperty("webdriver.chrome.driver", "D:\\selenium\\chromedriver\\chromedriver.exe");
+		//Inicializar el navegador
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://automationpractice.com/index.php");
+		String titulo = driver.getTitle();
+		if (titulo.equals("My Store")) System.out.println("Estamos en la Ventana Correcta");
+		driver.findElement(By.id("header_logo"));
+		driver.findElement(By.linkText("Sign in")).click();
+		Boolean ElementoExiste = driver.findElement(By.className("page-heading")).isDisplayed();
+		if (ElementoExiste) System.out.println("Elemento Visualizado");
+		driver.findElement(By.xpath("/html/body/div/div[2]/div/div[3]/div/div/div[1]/form/div/div[2]/input")).sendKeys("winston@gmail.com");
+		System.out.println("Pasos completados");
+		driver.close();
+	}
+}

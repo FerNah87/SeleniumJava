@@ -1,0 +1,38 @@
+package anotacionestestng;
+
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import com.beust.jcommander.Parameter;
+
+public class SegundoSet {
+	@Test
+	public void pruebaTres() {
+		System.out.println("Prueba Tres del segundo Set");
+	}
+	//parametrizacion (cambia el orden) DependOnMethods = no se puede ejecutar hasta que el otro lop haga
+	@Test(dependsOnMethods = {"pruebaTres"})
+	public void pruebaCuatro() {
+		System.out.println("Prueba Cuatro del segundo Set");
+	}
+	//para que no se haga la prueba (enable)
+	@Test(enabled = true)
+	public void pruebaCinco() {
+		System.out.println("Prueba Cinco del segundo Set");
+	}
+	@Test
+	public void clickAlHomePage() {
+		System.out.println("Click al home");
+	}
+	@Test(groups = {"funcional"})
+	public void clickAlCarrito() {
+		System.out.println("Click al carrito y funcional");
+	}
+	//Pasa los parametros
+	//interpreta los datos del usuario / pass
+	@Parameters({"userName", "password"})
+	@Test
+	public void clickAlUsuario(String methodUserName, String methodPassword) {
+		System.out.println("Click al usuario: " + methodUserName + ", con el password " + methodPassword);
+	}
+}

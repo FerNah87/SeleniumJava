@@ -1,0 +1,8 @@
+package anotacionestestng;
+
+public class SegundoSet {
+	@Test
+	public void pruebaTres() {
+		System.out.println("Prueba Tres del segundo Set");
+	}
+}

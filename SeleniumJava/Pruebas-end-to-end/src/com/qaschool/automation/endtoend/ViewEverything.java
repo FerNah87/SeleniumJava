@@ -1,0 +1,123 @@
+package com.qaschool.automation.endtoend;
+
+import java.util.ArrayList;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class ViewEverything {
+	public static void main(String[] args) {
+		WebDriver driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\fernando.zalasar\\eclipse-workspace\\SeleniumFiles\\chromedriver.exe");
+		driver.get("https://google.com");
+		
+		//metodo para navegar a otra página
+		driver.navigate().to("https://www.winstoncastillo.com/robot-selenium/");
+		
+		//muestra la url actual
+		System.out.println(driver.getCurrentUrl());
+		
+		//Muestra el título de la pag actual
+		System.out.println(driver.getTitle());
+		
+		//hace click en el elemento MacBook Pro
+		driver.findElement(By.linkText("MacBook Pro")).click();
+		System.out.println(driver.getCurrentUrl());
+		System.out.println(driver.getTitle());
+		
+		//regresa a la pag anterior
+		driver.navigate().back();
+		driver.navigate().forward();
+
+		//recarga la pag
+		driver.navigate().refresh();
+
+		//pasar el mouse sobre algun menu y creamos un objeto llamado Action_Raton, con la clase Action
+		Actions accion_raton = new Actions(driver);
+
+		//se instancia una variable para la opcion de menu, de tipo webelement
+		WebElement opcionMenu = driver.findElement((By.xpath("//*[@id=\"menu\"]/div[2]/ul/li[3]/a")));
+		//se realiza dicha accion
+		accion_raton.moveToElement(opcionMenu).perform();
+
+		//paras abrir otra pestaña, creamos otro objeto driver y agregamos la pagina que queremos abrir
+		/*
+		WebDriver driver2 = new ChromeDriver();
+		driver2.get("https://google.com");
+		driver2.quit();
+		*/
+
+		//guardamos en una variable el tab actual
+		String primerTAb = driver.getWindowHandle();
+
+		//guardamos en una variable la cantidad de tab abiertos
+		Integer cantidadTab = driver.getWindowHandles().size();
+		System.out.println(cantidadTab);
+
+		//Instanciamos una clase de JS para abrir otro tab
+		JavascriptExecutor codigo = (JavascriptExecutor)driver;
+		codigo.executeScript("window.open();");
+
+		//registramos la cantidad de tab abiertos en el momento
+		cantidadTab = driver.getWindowHandles().size();
+		System.out.println(cantidadTab);
+
+		//para movernos de una tab a otra, debemos usar el arreglo debemos instanciar el arreglo para usar su contenido
+		// se define un arreglo y se instancia, se le pasa el valor del arreglo a Tabs
+		ArrayList<String> Tabs = new ArrayList<String> (driver.getWindowHandles());
+
+		//para ir a la pestaña 2 se escribe así (1 porque empieza la numeracion desde 0)
+		driver.switchTo().window(Tabs.get(1));
+
+		//Para ir a la pag principal
+		driver.get("https://winstoncastillo.com/");
+
+		//creamos la segunda variable para guardar la otra pestana
+		String segundaTAb = driver.getWindowHandle();
+
+		//creamos dos pestañas mas
+		codigo.executeScript("window.open();");
+		codigo.executeScript("window.open();");
+
+		Tabs = new ArrayList<String> (driver.getWindowHandles());
+		driver.switchTo().window(Tabs.get(2));
+		driver.get("https://winstoncastillo.com/");
+
+		String tercerTAb = driver.getWindowHandle();
+		driver.switchTo().window(Tabs.get(3));
+		driver.get("https:selenium.dev/");
+
+		String cuartaTab = driver.getWindowHandle();
+		cantidadTab = driver.getWindowHandles().size();
+		System.out.println(cantidadTab);
+
+		//Nos vamos a la primera TAB o pestana
+		driver.switchTo().window(primerTAb);
+
+		//Buscar el elemento "search" y escribir "buscar"
+		driver.findElement(By.name("search")).sendKeys("buscar");
+
+		//movernos a la pestana 3, 4 y 2
+		driver.switchTo().window(segundaTAb);
+
+		//hacer click en un elemnto de la página. Se usa el xpath para hacer click
+		driver.findElement(By.xpath("//*[@id=\"portfolio-link\"]/span")).click();
+		driver.switchTo().window(tercerTAb);
+		driver.findElement(By.xpath("//*[@id=\"navbar\"]/a[1]")).click();
+
+		//para escribir algo (sendkeys)
+		driver.findElement(By.xpath("//*[@id=\"navbar\"]/a[1]")).sendKeys("lo que quieres escribir");
+		driver.findElement(By.linkText("Downloads")).click();
+		driver.switchTo().window(cuartaTab);
+
+		//cerrar la pestaña actual
+		driver.close();
+		cantidadTab = driver.getWindowHandles().size();
+		System.out.println("las pestañas abiertas son:"+cantidadTab);
+		driver.quit();
+		}
+}

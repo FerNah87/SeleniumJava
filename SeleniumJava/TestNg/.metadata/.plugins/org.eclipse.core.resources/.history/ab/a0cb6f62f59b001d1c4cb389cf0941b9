@@ -1,0 +1,15 @@
+package anotacionestestng;
+
+import org.testng.annotations.Test;
+
+public class SegundoSet {
+	@Test
+	public void pruebaTres() {
+		System.out.println("Prueba Tres del segundo Set");
+	}
+	//parametrizacion (cambia el orden) DependOnMethods = no se puede ejecutar hasta que el otro lop haga
+	@Test(dependsOnMethods = )
+	public void pruebaCuatro() {
+		System.out.println("Prueba Cuatro del segundo Set");
+	}
+}

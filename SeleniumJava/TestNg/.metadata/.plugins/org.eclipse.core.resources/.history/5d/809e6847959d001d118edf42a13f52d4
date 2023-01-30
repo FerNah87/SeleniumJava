@@ -1,0 +1,17 @@
+package repository;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class HomePage {
+	WebDriver driver;
+	
+	public HomePage(WebDriver navegador) {
+		this.driver = navegador;
+	}
+	//Crear elementos
+	
+	By brandLogo = By.ByXPath("//*[@id=\"header_logo\"]/a/img");
+	
+	
+}

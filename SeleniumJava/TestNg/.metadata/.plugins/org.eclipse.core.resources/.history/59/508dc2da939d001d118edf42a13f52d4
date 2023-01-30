@@ -1,0 +1,9 @@
+package repository;
+
+import org.openqa.selenium.WebDriver;
+
+public class HomePage {
+	public HomePage(WebDriver navegador) {
+		this.driver = navegador;
+	}
+}

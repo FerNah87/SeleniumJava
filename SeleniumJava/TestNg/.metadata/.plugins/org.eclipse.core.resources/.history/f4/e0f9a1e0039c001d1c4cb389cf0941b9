@@ -1,0 +1,22 @@
+package anotacionestestng;
+
+import org.testng.annotations.Test;
+
+public class TercerSet {
+	@Test
+	public void tercerSetPruebaUno() {
+		System.out.println("Primera Prueba Tercer Set");
+	}
+	@Test
+	public void tercerSetPruebaDos() {
+		System.out.println("Segunda Prueba Tercer Set");
+	}
+	@Test(groups = {"funcional"})
+	public void tercerSetPruebaTres() {
+		System.out.println("Tercera Prueba Tercer Set y funcional");
+	}
+	@Test
+	public void tercerSetPruebaCuatro() {
+		System.out.println("Cuarta Prueba Tercer Set");
+	}
+}

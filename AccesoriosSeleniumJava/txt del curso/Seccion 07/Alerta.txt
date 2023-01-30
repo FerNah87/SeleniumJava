@@ -1,0 +1,19 @@
+package com.qaschool.tipsautomatizacion;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Alertas_js {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "D:\\selenium\\updated-chrome\\chromedriver.exe");
+		WebDriver navegador = new ChromeDriver();
+		navegador.get("http://winstoncastillo.com/ejercicios/atoc.html");
+		navegador.findElement(By.cssSelector("#testCasesAtoC > p:nth-child(2) > button")).click();
+		String mensaje = navegador.switchTo().alert().getText().toString();
+		System.out.println(mensaje);
+		navegador.switchTo().alert().accept();
+		navegador.close();
+	}
+}

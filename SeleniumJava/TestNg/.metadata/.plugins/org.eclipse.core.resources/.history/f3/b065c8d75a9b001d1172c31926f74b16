@@ -1,0 +1,17 @@
+package anotacionestestng;
+
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+
+public class AnotacionesBasicas {
+	@BeforeClass
+	public void codigoAntesClase() {
+		System.out.println("Este codigo significa antes de la clase");
+	}
+	
+	@AfterClass
+	public void codigoDespuesClase() {
+		System.out.println("Este codigo significa despues de la clase");
+	}
+
+}

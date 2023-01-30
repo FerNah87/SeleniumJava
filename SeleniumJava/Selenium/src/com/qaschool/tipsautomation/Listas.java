@@ -1,0 +1,34 @@
+package com.qaschool.tipsautomation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Listas {
+
+	public static void main(String[] args) throws InterruptedException {
+		//la pagina del curso esta fuera de servicio
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\fernando.zalasar\\eclipse-workspace\\AccesoriosSeleniumJava\\SeleniumLibrary\\chromedriver.exe");
+		WebDriver navegador = new ChromeDriver();
+		navegador.get("http://automationpractice.com/index.php?controller=contact");
+		//Instanciando Lista Estatica
+		WebElement listaEstatica = navegador.findElement(By.id("id_contact"));
+		//es una solapa con varias elecciones 
+		Select listaSeleccionada = new Select(listaEstatica);
+		//selecciona la segunda opcion
+		listaSeleccionada.selectByIndex(2);
+		//que muestre la seleccion
+		System.out.println(listaSeleccionada.getFirstSelectedOption().getText());
+		Thread.sleep(3000);
+		listaSeleccionada.selectByVisibleText("Customer service");
+		System.out.println(listaSeleccionada.getFirstSelectedOption().getText());
+		Thread.sleep(3000);
+		listaSeleccionada.selectByValue("0");
+		System.out.println(listaSeleccionada.getFirstSelectedOption().getText());
+		Thread.sleep(3000);
+		//la pagina del curso esta fuera de servicio
+	}
+
+}

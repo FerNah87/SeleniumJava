@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="14" passed="14" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-01-24T17:39:34 ART" name="Suite de Pruebas" finished-at="2023-01-24T17:39:34 ART" duration-ms="178">
+    <groups>
+      <group name="smoke">
+        <method signature="TercerSet.tercerSetPruebaDos()[pri:0, instance:anotacionestestng.TercerSet@66d3eec0]" name="tercerSetPruebaDos" class="anotacionestestng.TercerSet"/>
+        <method signature="TercerSet.tercerSetPruebaTres()[pri:0, instance:anotacionestestng.TercerSet@66d3eec0]" name="tercerSetPruebaTres" class="anotacionestestng.TercerSet"/>
+      </group> <!-- smoke -->
+      <group name="funcional">
+        <method signature="AnotacionesBasicas.pruebaUno()[pri:0, instance:anotacionestestng.AnotacionesBasicas@3059cbc]" name="pruebaUno" class="anotacionestestng.AnotacionesBasicas"/>
+        <method signature="SegundoSet.clickAlCarrito(java.lang.String,java.lang.String)[pri:0, instance:anotacionestestng.SegundoSet@14555e0a]" name="clickAlCarrito" class="anotacionestestng.SegundoSet"/>
+        <method signature="TercerSet.tercerSetPruebaTres()[pri:0, instance:anotacionestestng.TercerSet@66d3eec0]" name="tercerSetPruebaTres" class="anotacionestestng.TercerSet"/>
+      </group> <!-- funcional -->
+    </groups>
+    <test started-at="2023-01-24T17:39:34 ART" name="Casos de Prueba Anotaciones" finished-at="2023-01-24T17:39:34 ART" duration-ms="82">
+      <class name="anotacionestestng.AnotacionesBasicas">
+        <test-method is-config="true" signature="codigoAntesSetTest()[pri:0, instance:anotacionestestng.AnotacionesBasicas@3059cbc]" started-at="2023-01-24T17:39:34 ART" name="codigoAntesSetTest" finished-at="2023-01-24T17:39:34 ART" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- codigoAntesSetTest -->
+        <test-method is-config="true" signature="codigoAntesClase()[pri:0, instance:anotacionestestng.AnotacionesBasicas@3059cbc]" started-at="2023-01-24T17:39:34 ART" name="codigoAntesClase" finished-at="2023-01-24T17:39:34 ART" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- codigoAntesClase -->
+        <test-method is-config="true" signature="codigoAntesMetodo()[pri:0, instance:anotacionestestng.AnotacionesBasicas@3059cbc]" started-at="2023-01-24T17:39:34 ART" name="codigoAntesMetodo" finished-at="2023-01-24T17:39:34 ART" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- codigoAntesMetodo -->
+        <test-method signature="pruebaUno()[pri:0, instance:anotacionestestng.AnotacionesBasicas@3059cbc]" started-at="2023-01-24T17:39:34 ART" name="pruebaUno" finished-at="2023-01-24T17:39:34 ART" duration-ms="6" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pruebaUno -->
+        <test-method is-config="true" signature="codigoDespuesMetodo()[pri:0, instance:anotacionestestng.AnotacionesBasicas@3059cbc]" started-at="2023-01-24T17:39:34 ART" name="codigoDespuesMetodo" finished-at="2023-01-24T17:39:34 ART" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- codigoDespuesMetodo -->
+        <test-method is-config="true" signature="codigoAntesMetodo()[pri:0, instance:anotacionestestng.AnotacionesBasicas@3059cbc]" started-at="2023-01-24T17:39:34 ART" name="codigoAntesMetodo" finished-at="2023-01-24T17:39:34 ART" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- codigoAntesMetodo -->
+        <test-method signature="pruebaDos()[pri:0, instance:anotacionestestng.AnotacionesBasicas@3059cbc]" started-at="2023-01-24T17:39:34 ART" name="pruebaDos" finished-at="2023-01-24T17:39:34 ART" depends-on-methods="anotacionestestng.AnotacionesBasicas.pruebaUno" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pruebaDos -->
+        <test-method is-config="true" signature="codigoDespuesMetodo()[pri:0, instance:anotacionestestng.AnotacionesBasicas@3059cbc]" started-at="2023-01-24T17:39:34 ART" name="codigoDespuesMetodo" finished-at="2023-01-24T17:39:34 ART" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- codigoDespuesMetodo -->
+        <test-method is-config="true" signature="codigoDespuesClase()[pri:0, instance:anotacionestestng.AnotacionesBasicas@3059cbc]" started-at="2023-01-24T17:39:34 ART" name="codigoDespuesClase" finished-at="2023-01-24T17:39:34 ART" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- codigoDespuesClase -->
+        <test-method is-config="true" signature="codigoDespuesSetTest()[pri:0, instance:anotacionestestng.AnotacionesBasicas@3059cbc]" started-at="2023-01-24T17:39:34 ART" name="codigoDespuesSetTest" finished-at="2023-01-24T17:39:34 ART" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- codigoDespuesSetTest -->
+      </class> <!-- anotacionestestng.AnotacionesBasicas -->
+      <class name="anotacionestestng.SegundoSet">
+        <test-method signature="clickAlCarrito(java.lang.String,java.lang.String)[pri:0, instance:anotacionestestng.SegundoSet@14555e0a]" started-at="2023-01-24T17:39:34 ART" name="clickAlCarrito" data-provider="getData" finished-at="2023-01-24T17:39:34 ART" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Camisa]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[$10,00]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickAlCarrito -->
+        <test-method signature="clickAlCarrito(java.lang.String,java.lang.String)[pri:0, instance:anotacionestestng.SegundoSet@14555e0a]" started-at="2023-01-24T17:39:34 ART" name="clickAlCarrito" data-provider="getData" finished-at="2023-01-24T17:39:34 ART" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Pantalon]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[$12,00]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickAlCarrito -->
+        <test-method signature="clickAlCarrito(java.lang.String,java.lang.String)[pri:0, instance:anotacionestestng.SegundoSet@14555e0a]" started-at="2023-01-24T17:39:34 ART" name="clickAlCarrito" data-provider="getData" finished-at="2023-01-24T17:39:34 ART" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Falda]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[$14,00]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickAlCarrito -->
+        <test-method signature="clickAlHomePage()[pri:0, instance:anotacionestestng.SegundoSet@14555e0a]" started-at="2023-01-24T17:39:34 ART" name="clickAlHomePage" finished-at="2023-01-24T17:39:34 ART" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickAlHomePage -->
+        <test-method signature="clickAlUsuario(java.lang.String,java.lang.String)[pri:0, instance:anotacionestestng.SegundoSet@14555e0a]" started-at="2023-01-24T17:39:34 ART" name="clickAlUsuario" finished-at="2023-01-24T17:39:34 ART" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Administrator]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickAlUsuario -->
+        <test-method signature="pruebaCinco()[pri:0, instance:anotacionestestng.SegundoSet@14555e0a]" started-at="2023-01-24T17:39:34 ART" name="pruebaCinco" finished-at="2023-01-24T17:39:34 ART" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pruebaCinco -->
+        <test-method signature="pruebaTres()[pri:0, instance:anotacionestestng.SegundoSet@14555e0a]" started-at="2023-01-24T17:39:34 ART" name="pruebaTres" finished-at="2023-01-24T17:39:34 ART" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pruebaTres -->
+        <test-method signature="pruebaCuatro()[pri:0, instance:anotacionestestng.SegundoSet@14555e0a]" started-at="2023-01-24T17:39:34 ART" name="pruebaCuatro" finished-at="2023-01-24T17:39:34 ART" depends-on-methods="anotacionestestng.SegundoSet.pruebaTres" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pruebaCuatro -->
+      </class> <!-- anotacionestestng.SegundoSet -->
+    </test> <!-- Casos de Prueba Anotaciones -->
+    <test started-at="2023-01-24T17:39:34 ART" name="Casos de Pruebas Nuevos" finished-at="2023-01-24T17:39:34 ART" duration-ms="7">
+      <class name="anotacionestestng.AnotacionesBasicas">
+        <test-method is-config="true" signature="codigoAntesSuite()[pri:0, instance:anotacionestestng.AnotacionesBasicas@3059cbc]" started-at="2023-01-24T17:39:34 ART" name="codigoAntesSuite" finished-at="2023-01-24T17:39:34 ART" duration-ms="9" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- codigoAntesSuite -->
+        <test-method is-config="true" signature="codigoDespuesSuite()[pri:0, instance:anotacionestestng.AnotacionesBasicas@3059cbc]" started-at="2023-01-24T17:39:34 ART" name="codigoDespuesSuite" finished-at="2023-01-24T17:39:34 ART" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- codigoDespuesSuite -->
+      </class> <!-- anotacionestestng.AnotacionesBasicas -->
+      <class name="anotacionestestng.TercerSet">
+        <test-method signature="tercerSetPruebaCuatro()[pri:0, instance:anotacionestestng.TercerSet@66d3eec0]" started-at="2023-01-24T17:39:34 ART" name="tercerSetPruebaCuatro" finished-at="2023-01-24T17:39:34 ART" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tercerSetPruebaCuatro -->
+        <test-method signature="tercerSetPruebaDos()[pri:0, instance:anotacionestestng.TercerSet@66d3eec0]" started-at="2023-01-24T17:39:34 ART" name="tercerSetPruebaDos" finished-at="2023-01-24T17:39:34 ART" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tercerSetPruebaDos -->
+        <test-method signature="tercerSetPruebaTres()[pri:0, instance:anotacionestestng.TercerSet@66d3eec0]" started-at="2023-01-24T17:39:34 ART" name="tercerSetPruebaTres" finished-at="2023-01-24T17:39:34 ART" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tercerSetPruebaTres -->
+        <test-method signature="tercerSetPruebaUno()[pri:0, instance:anotacionestestng.TercerSet@66d3eec0]" started-at="2023-01-24T17:39:34 ART" name="tercerSetPruebaUno" finished-at="2023-01-24T17:39:34 ART" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tercerSetPruebaUno -->
+      </class> <!-- anotacionestestng.TercerSet -->
+    </test> <!-- Casos de Pruebas Nuevos -->
+  </suite> <!-- Suite de Pruebas -->
+</testng-results>
